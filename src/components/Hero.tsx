@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, MapPin, Instagram } from 'lucide-react';
-import { WhatsAppIcon } from './WhatsAppIcon';
+import { Mail, MapPin } from 'lucide-react';
+import { WhatsAppIcon } from './icons/WhatsAppIcon';
+import { LinkedinIcon } from './icons/LinkedinIcon';
+import { InstagramIcon } from './icons/InstagramIcon';
 import { ContactInfo, ResumeData } from '../types/Resume';
 type HeroProps = {
   name: string;
@@ -106,23 +108,23 @@ export function Hero({
             <span>Email</span>
           </a>
           <a
-            href={`https://${contact.linkedin}`}
+            href={contact.linkedin}
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-brand-surface border border-zinc-700 text-white rounded-full font-semibold hover:border-brand-orange hover:text-brand-orange transition-colors"
             aria-label={ariaLabels.openLinkedIn}
           >
-            <Linkedin size={18} aria-hidden="true" />
+            <LinkedinIcon size={18} aria-hidden="true" />
             <span>LinkedIn</span>
           </a>
           <a
-            href={`https://${contact.instagram}`}
+            href={contact.instagram}
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-brand-surface border border-zinc-700 text-white rounded-full font-semibold hover:border-brand-orange hover:text-brand-orange transition-colors"
             aria-label={ariaLabels.openInstagram}
           >
-            <Instagram size={18} aria-hidden="true" />
+            <InstagramIcon size={18} aria-hidden="true" />
             <span>Instagram</span>
           </a>
         </motion.div>
