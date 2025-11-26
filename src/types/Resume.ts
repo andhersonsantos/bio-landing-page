@@ -4,6 +4,7 @@ export type ContactInfo = {
   linkedin: string;
   location: string;
   instagram: string;
+  github: string;
 };
 
 export type ExperienceItem = {

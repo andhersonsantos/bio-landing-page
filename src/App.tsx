@@ -79,6 +79,7 @@ function App() {
         phone={contact.phone}
         email={contact.email}
         linkedin={contact.linkedin}
+        github={contact.github}
         ariaLabels={ariaLabels}
       />
     </div>
