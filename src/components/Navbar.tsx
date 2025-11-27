@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo, memo } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { ResumeData } from '../types/Resume';
 
@@ -36,7 +36,7 @@ type MobileNavProps = {
   ariaLabels: ResumeData['ariaLabels'];
 };
 
-function DesktopNav({
+const DesktopNav = memo(function DesktopNav({
   navLinks,
   language,
   toggleLanguage,
@@ -78,9 +78,9 @@ function DesktopNav({
       </a>
     </div>
   );
-}
+});
 
-function MobileNav({
+const MobileNav = memo(function MobileNav({
   navLinks,
   language,
   toggleLanguage,
@@ -88,6 +88,14 @@ function MobileNav({
   setMobileMenuOpen,
   ariaLabels,
 }: MobileNavProps) {
+  const handleToggle = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleClose = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <>
       <div className="flex items-center gap-4 md:hidden">
@@ -102,7 +110,7 @@ function MobileNav({
 
         <button
           className="text-white"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          onClick={handleToggle}
           aria-label={
             mobileMenuOpen ? ariaLabels.closeMenu : ariaLabels.openMenu
           }
@@ -128,7 +136,7 @@ function MobileNav({
             <a
               key={link.name}
               href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={handleClose}
               className="text-zinc-300 hover:text-brand-orange py-2 text-lg"
               aria-label={`${ariaLabels.navigateToSection} ${link.name}`}
             >
@@ -139,9 +147,9 @@ function MobileNav({
       )}
     </>
   );
-}
+});
 
-export function Navbar({
+export const Navbar = memo(function Navbar({
   experience,
   skills,
   education,
@@ -154,17 +162,23 @@ export function Navbar({
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  const handleScroll = useCallback(() => {
+    setScrolled(window.scrollY > 50);
   }, []);
 
-  const navLinks: NavLink[] = [
-    { name: experience, href: '#experience' },
-    { name: skills, href: '#skills' },
-    { name: education, href: '#education' },
-  ];
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
+  const navLinks: NavLink[] = useMemo(
+    () => [
+      { name: experience, href: '#experience' },
+      { name: skills, href: '#skills' },
+      { name: education, href: '#education' },
+    ],
+    [experience, skills, education]
+  );
 
   return (
     <nav
@@ -197,9 +211,13 @@ export function Navbar({
       </div>
     </nav>
   );
-}
+});
 
-function Logo({ ariaLabels }: { ariaLabels: ResumeData['ariaLabels'] }) {
+const Logo = memo(function Logo({
+  ariaLabels,
+}: {
+  ariaLabels: ResumeData['ariaLabels'];
+}) {
   return (
     <a
       href="#"
@@ -216,4 +234,4 @@ function Logo({ ariaLabels }: { ariaLabels: ResumeData['ariaLabels'] }) {
       </span>
     </a>
   );
-}
+});

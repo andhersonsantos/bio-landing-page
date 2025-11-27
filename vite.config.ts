@@ -34,6 +34,28 @@ export default defineConfig(() => {
     build: {
       outDir: '../dist',
       emptyOutDir: true,
+      // Otimizações de build para melhor performance
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Separa bibliotecas grandes em chunks próprios
+            'react-vendor': ['react', 'react-dom'],
+            'framer-motion': ['framer-motion'],
+            'recharts': ['recharts'],
+            'lucide-react': ['lucide-react'],
+          },
+        },
+      },
+      // Otimizações de minificação
+      minify: 'esbuild',
+      // Aumenta o limite de aviso de tamanho de chunk
+      chunkSizeWarningLimit: 1000,
+      // Habilita source maps apenas em desenvolvimento
+      sourcemap: false,
+    },
+    // Otimizações de dependências
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'framer-motion', 'lucide-react'],
     },
   };
 });

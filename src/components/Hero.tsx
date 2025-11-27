@@ -1,9 +1,11 @@
+import { memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin } from 'lucide-react';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
 import { LinkedinIcon } from './icons/LinkedinIcon';
 import { InstagramIcon } from './icons/InstagramIcon';
 import { ContactInfo, ResumeData } from '../types/Resume';
+
 type HeroProps = {
   name: string;
   role: string;
@@ -12,7 +14,8 @@ type HeroProps = {
   greeting: string;
   ariaLabels: ResumeData['ariaLabels'];
 };
-export function Hero({
+
+export const Hero = memo(function Hero({
   name,
   role,
   summary,
@@ -20,10 +23,7 @@ export function Hero({
   greeting,
   ariaLabels,
 }: HeroProps) {
-  const getWhatsAppUrl = (phone: string) => {
-    const number = phone.replace(/\D/g, '');
-    return `https://wa.me/${number}`;
-  };
+  const nameWords = useMemo(() => name.split(' '), [name]);
 
   return (
     <section
@@ -50,7 +50,7 @@ export function Hero({
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
         >
-          {name.split(' ').map((word, i) => (
+          {nameWords.map((word, i) => (
             <span
               key={i}
               className={i === 0 ? 'text-white' : 'text-brand-light'}
@@ -90,7 +90,7 @@ export function Hero({
           aria-label={ariaLabels.contactLinks}
         >
           <a
-            href={getWhatsAppUrl(contact.phone)}
+            href={`https://wa.me/${contact.phone}`}
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-full font-semibold hover:bg-[#128C7E] transition-colors shadow-lg shadow-green-900/20"
@@ -148,4 +148,4 @@ export function Hero({
       </div>
     </section>
   );
-}
+});

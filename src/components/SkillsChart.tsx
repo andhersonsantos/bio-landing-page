@@ -1,3 +1,4 @@
+import { memo, useMemo } from 'react';
 import {
   Radar,
   RadarChart,
@@ -24,8 +25,15 @@ type Props = {
   ariaLabels: ResumeData['ariaLabels'];
 };
 
-export function SkillsChart({ title, ariaLabels }: Props) {
-  const chartDescription = `${ariaLabels.chartDescription} ${data.map((d) => d.subject).join(', ')}`;
+export const SkillsChart = memo(function SkillsChart({
+  title,
+  ariaLabels,
+}: Props) {
+  const chartDescription = useMemo(
+    () =>
+      `${ariaLabels.chartDescription} ${data.map((d) => d.subject).join(', ')}`,
+    [ariaLabels.chartDescription]
+  );
 
   return (
     <figure className="w-full h-[400px] bg-brand-surface/30 rounded-2xl border border-zinc-800 p-4 relative overflow-hidden">
@@ -84,4 +92,4 @@ export function SkillsChart({ title, ariaLabels }: Props) {
       </div>
     </figure>
   );
-}
+});

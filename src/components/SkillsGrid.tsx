@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { SkillCategory, ResumeData } from '../types/Resume';
 import { SkillsChart } from './SkillsChart';
@@ -32,7 +33,7 @@ const getIcon = (title: string) => {
   );
 };
 
-export function SkillsGrid({
+export const SkillsGrid = memo(function SkillsGrid({
   categories,
   titles,
   ariaLabels,
@@ -110,4 +111,4 @@ export function SkillsGrid({
       </div>
     </section>
   );
-}
+});

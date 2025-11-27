@@ -1,10 +1,29 @@
+import { lazy, Suspense } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Experience } from './components/Experience';
-import { SkillsGrid } from './components/SkillsGrid';
-import { Education } from './components/Education';
-import { Footer } from './components/Footer';
 import { useLanguage } from './hooks/useLanguage';
+
+// Lazy load for components below the fold
+const Experience = lazy(() =>
+  import('./components/Experience').then((module) => ({
+    default: module.Experience,
+  }))
+);
+const SkillsGrid = lazy(() =>
+  import('./components/SkillsGrid').then((module) => ({
+    default: module.SkillsGrid,
+  }))
+);
+const Education = lazy(() =>
+  import('./components/Education').then((module) => ({
+    default: module.Education,
+  }))
+);
+const Footer = lazy(() =>
+  import('./components/Footer').then((module) => ({
+    default: module.Footer,
+  }))
+);
 
 function App() {
   const {
@@ -50,38 +69,42 @@ function App() {
           ariaLabels={ariaLabels}
         />
 
-        <Experience
-          experiences={experience}
-          title={ui.experience}
-          ariaLabels={ariaLabels}
-        />
+        <Suspense fallback={<div className="min-h-screen" />}>
+          <Experience
+            experiences={experience}
+            title={ui.experience}
+            ariaLabels={ariaLabels}
+          />
 
-        <SkillsGrid
-          categories={skillCategories}
-          titles={{
-            main: ui.skills,
-            philosophy: ui.philosophyTitle,
-            philosophyDesc: ui.philosophyDesc,
-            radar: ui.radarTitle,
-          }}
-          ariaLabels={ariaLabels}
-        />
+          <SkillsGrid
+            categories={skillCategories}
+            titles={{
+              main: ui.skills,
+              philosophy: ui.philosophyTitle,
+              philosophyDesc: ui.philosophyDesc,
+              radar: ui.radarTitle,
+            }}
+            ariaLabels={ariaLabels}
+          />
 
-        <Education
-          education={education}
-          title={ui.education}
-          ariaLabels={ariaLabels}
-        />
+          <Education
+            education={education}
+            title={ui.education}
+            ariaLabels={ariaLabels}
+          />
+        </Suspense>
       </main>
 
-      <Footer
-        name={name}
-        phone={contact.phone}
-        email={contact.email}
-        linkedin={contact.linkedin}
-        github={contact.github}
-        ariaLabels={ariaLabels}
-      />
+      <Suspense fallback={null}>
+        <Footer
+          name={name}
+          phone={contact.phone}
+          email={contact.email}
+          linkedin={contact.linkedin}
+          github={contact.github}
+          ariaLabels={ariaLabels}
+        />
+      </Suspense>
     </div>
   );
 }

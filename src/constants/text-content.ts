@@ -1,7 +1,7 @@
 import { ResumeData } from '../types/Resume';
 
 const SHARED_CONTACT = {
-  phone: '+55 12 99656-9230',
+  phone: '+5512996569230',
   email: 'andhersonsantos@gmail.com',
   linkedin: 'https://www.linkedin.com/in/andherson/',
   location: 'Caraguatatuba – SP – Brasil',

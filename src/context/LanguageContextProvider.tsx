@@ -1,4 +1,4 @@
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode, useMemo, useCallback } from 'react';
 import { Language } from '../types/Language';
 import { DATA_EN, DATA_PT } from '../constants/text-content';
 import { DEFAULT_LANGUAGE } from '../constants/language';
@@ -17,16 +17,27 @@ const getInitialLanguage = (): Language => {
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>(getInitialLanguage);
 
-  const toggleLanguage = () => {
+  const toggleLanguage = useCallback(() => {
     setLanguage((prev) => (prev === 'pt' ? 'en' : 'pt'));
-  };
+  }, []);
 
-  const data = language === 'pt' ? DATA_PT : DATA_EN;
+  const data = useMemo(
+    () => (language === 'pt' ? DATA_PT : DATA_EN),
+    [language]
+  );
+
+  const contextValue = useMemo(
+    () => ({
+      language,
+      setLanguage,
+      toggleLanguage,
+      ...data,
+    }),
+    [language, toggleLanguage, data]
+  );
 
   return (
-    <LanguageContext.Provider
-      value={{ language, setLanguage, toggleLanguage, ...data }}
-    >
+    <LanguageContext.Provider value={contextValue}>
       {children}
     </LanguageContext.Provider>
   );

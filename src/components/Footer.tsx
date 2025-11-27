@@ -13,7 +13,7 @@ type FooterProps = {
   ariaLabels: ResumeData['ariaLabels'];
 };
 
-export function Footer({
+export const Footer = function Footer({
   name,
   phone,
   email,
@@ -21,15 +21,12 @@ export function Footer({
   github,
   ariaLabels,
 }: FooterProps) {
-  const whatsappNumber = phone.replace(/\D/g, '');
-  const whatsappUrl = `wa.me/${whatsappNumber}`;
-
   return (
     <footer className="bg-zinc-950 border-t border-zinc-900 py-12 px-6 lg:px-24 text-center">
       <nav aria-label={ariaLabels.socialLinks}>
         <div className="flex justify-center gap-8 mb-8 items-center">
           <a
-            href={whatsappUrl}
+            href={`https://wa.me/${phone}`}
             target="_blank"
             rel="noreferrer"
             className="text-zinc-500 hover:text-[#25D366] transition-colors"
@@ -69,4 +66,4 @@ export function Footer({
       </p>
     </footer>
   );
-}
+};
