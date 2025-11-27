@@ -124,13 +124,12 @@ export const DATA_PT: ResumeData = {
       summary: [
         "Gerenciando o 'projeto' mais complexo e valioso da vida: o futuro de dois seres humanos.",
         "Responsável pelo 'deploy' diário de valores, 'debugging' de birras e garantia de alta disponibilidade de afeto.",
-        'É a única posição onde os incidentes em produção ensinam mais sobre inteligência emocional e negociação do que qualquer reunião de board. O ROI é infinito e medido em abraços.',
+        'É a única posição onde os incidentes em produção ensinam mais sobre inteligência emocional e negociação do que qualquer reunião de board.',
       ],
       techStack: [
         'Inteligência Emocional',
         'Negociação',
         'Gestão de Crise',
-        'Storytelling',
         'Ensinamento por exemplo',
       ],
     },
@@ -253,6 +252,7 @@ export const DATA_PT: ResumeData = {
       location: 'Caraguatatuba, SP',
       summary: [
         'Fundação e gestão de consultoria de software, desenvolvendo soluções de CRM e CMS sob medida para os setores Imobiliário e de Mídia.',
+        'Além dos projetos de software, tive uma loja de informática aberta ao público. A rotina de vender produtos e resolver problemas técnicos na hora me ensinou muito sobre atendimento e a correria real de manter um comércio funcionando.',
         'Essa experiência forneceu uma base sólida em gestão de produtos, liderança de pessoas e métricas de negócios.',
       ],
       techStack: [
@@ -273,11 +273,14 @@ export const DATA_PT: ResumeData = {
       role: 'Mecânico de automóveis',
       period: '2004 – Abril 2006',
       location: 'Caraguatatuba, SP',
-      summary: ['Manutenção de veículos de diversas marcas e modelos.'],
+      summary: [
+        'Compreendi que uma oficina vive de confiança. A responsabilidade de garantir a segurança dos veículos me mostrou que um erro não afeta apenas peças, mas vidas e a reputação do negócio. Essa visão moldou minha ética de trabalho para honrar a fé que os clientes depositavam em nós.',
+      ],
       techStack: [
-        'Mecânico de automóveis',
-        'Injeção Eletrônica',
-        'Alinhamento e Balanceamento',
+        'Confiança',
+        'Responsabilidade',
+        'Relacionamento',
+        'Precision',
       ],
     },
     {
@@ -286,12 +289,15 @@ export const DATA_PT: ResumeData = {
       role: 'Auxiliar Administrativo',
       period: '2000 – 2004',
       location: 'Caraguatatuba, SP',
-      summary: ['Auxiliar administrativo em uma auto mecânica.'],
+      summary: [
+        'Morar sozinho e pagar as próprias contas aos 14 anos foi minha verdadeira escola. Levei essa realidade para o dia a dia da oficina, aprendendo que organização e compromisso eram essenciais não só para o trabalho, mas para a vida.',
+      ],
       techStack: [
-        'Atendimento ao Cliente',
-        'Controle de Estoque',
-        'Contabilidade',
-        'Financeiro',
+        'Resposabilidade',
+        'Relacionamento',
+        'Autonomia',
+        'Organização',
+        'Compromisso',
       ],
     },
   ],
@@ -330,7 +336,7 @@ export const DATA_PT: ResumeData = {
   ui: {
     greeting: 'Olá, sou',
     about: 'Sobre',
-    experience: 'Experiência',
+    experience: 'Experiências',
     skills: 'Habilidades',
     education: 'Formação',
     contact: 'Contato',
@@ -394,13 +400,12 @@ export const DATA_EN: ResumeData = {
       summary: [
         "Managing life's most complex and valuable 'project': the future of two human beings.",
         "Responsible for the daily 'deploy' of values, 'debugging' tantrums, and ensuring high availability of affection.",
-        'It is the only position where production incidents teach more about emotional intelligence and negotiation than any board meeting. The ROI is infinite and measured in hugs.',
+        'It is the only position where production incidents teach more about emotional intelligence and negotiation than any board meeting.',
       ],
       techStack: [
         'Emotional Intelligence',
         'Negotiation',
         'Crisis Management',
-        'Storytelling',
         'Teaching by example',
       ],
     },
@@ -524,6 +529,7 @@ export const DATA_EN: ResumeData = {
       location: 'Caraguatatuba, SP',
       summary: [
         'Founded and managed a software consultancy, developing tailored CRM and CMS solutions for Real Estate and Media sectors.',
+        'Beyond software projects, I ran a computer store open to the public. The daily routine of selling products and solving technical problems on the spot taught me a lot about customer service and the real hustle of keeping a business running.',
         'This experience provided a solid foundation in product management, people leadership, and business metrics.',
       ],
       techStack: [
@@ -543,11 +549,15 @@ export const DATA_EN: ResumeData = {
       role: 'Automotive Mechanic',
       period: '2004 – Abril 2006',
       location: 'Caraguatatuba, SP',
-      summary: ['Maintenance of vehicles from various brands and models.'],
+      summary: [
+        'I understood that a repair shop relies on trust. The responsibility of ensuring vehicle safety showed me that an error affects not just parts, but lives and the business reputation. This perspective shaped my work ethic  to honor the faith clients placed in us.',
+      ],
       techStack: [
-        'Automotive Mechanic',
-        'Electronic Injection',
-        'Tire Alignment and Balance',
+        'Trust',
+        'Responsibility',
+        'Independence',
+        'Relationship',
+        'Precision',
       ],
     },
     {
@@ -556,12 +566,15 @@ export const DATA_EN: ResumeData = {
       role: 'Administrative Assistant',
       period: '2000 – 2004',
       location: 'Caraguatatuba, SP',
-      summary: ['Administrative assistant at an auto mechanic.'],
+      summary: [
+        "Living on my own and paying my own bills at 14 was my real school. I brought this reality into the workshop's daily routine, learning that organization and commitment were essential not just for work, but for life.",
+      ],
       techStack: [
-        'Customer Service',
-        'Inventory Control',
-        'Accounting',
-        'Finance',
+        'Responsibility',
+        'Relationship',
+        'Autonomy',
+        'Organization',
+        'Commitment',
       ],
     },
   ],
@@ -600,7 +613,7 @@ export const DATA_EN: ResumeData = {
   ui: {
     greeting: "Hello, I'm",
     about: 'About',
-    experience: 'Experience',
+    experience: 'Experiences',
     skills: 'Skills',
     education: 'Education',
     contact: 'Contact',
