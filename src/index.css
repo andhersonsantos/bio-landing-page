@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-brand-orange: #f97316;
@@ -6,9 +6,9 @@
   --color-brand-surface: #18181b;
   --color-brand-light: #e4e4e7;
   --color-brand-muted: #a1a1aa;
-  
-  --font-family-sans: "Inter", sans-serif;
-  --font-family-mono: "JetBrains Mono", monospace;
+
+  --font-family-sans: sans-serif;
+  --font-family-mono: monospace;
 }
 
 body {
@@ -67,7 +67,6 @@ body {
 }
 
 /* Skip link styles */
-a[href="#main-content"]:focus {
+a[href='#main-content']:focus {
   z-index: 100;
 }
-
