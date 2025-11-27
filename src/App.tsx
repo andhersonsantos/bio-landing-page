@@ -5,8 +5,8 @@ import { useLanguage } from './hooks/useLanguage';
 
 // Lazy load for components below the fold
 const Experience = lazy(() =>
-  import('./components/Experience').then((module) => ({
-    default: module.Experience,
+  import('./components/Experiences').then((module) => ({
+    default: module.Experiences,
   }))
 );
 const SkillsGrid = lazy(() =>
@@ -59,7 +59,7 @@ function App() {
         ariaLabels={ariaLabels}
       />
 
-      <main id="main-content" tabIndex={-1}>
+      <main id="main-content" tabIndex={-1} className="flex flex-col gap-8">
         <Hero
           name={name}
           role={role}

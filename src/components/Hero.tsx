@@ -27,7 +27,7 @@ export const Hero = memo(function Hero({
 
   return (
     <section
-      className="flex flex-col justify-center relative overflow-hidden px-6 lg:px-24 pt-36 pb-12"
+      className="flex flex-col justify-center relative overflow-hidden px-6 lg:px-24 pt-28"
       aria-label={ariaLabels.personalPresentation}
     >
       <div className="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-brand-orange/5 rounded-full blur-[120px]" />

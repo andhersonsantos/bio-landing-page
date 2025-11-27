@@ -122,7 +122,7 @@ type ExperienceProps = {
   ariaLabels: ResumeData['ariaLabels'];
 };
 
-export const Experience = memo(function Experience({
+export const Experiences = memo(function Experience({
   experiences,
   title,
   ariaLabels,
@@ -130,14 +130,14 @@ export const Experience = memo(function Experience({
   return (
     <section
       id="experience"
-      className="py-10 px-6 lg:px-24 relative"
+      className="px-6 lg:px-24 relative"
       aria-labelledby="experience-title"
     >
       <div className="lg:flex items-center gap-2 justify-between">
         <span>
           <h3
             id="experience-title"
-            className="text-3xl font-bold text-white lg:mb-16 flex items-center gap-3"
+            className="text-3xl font-bold text-white mb-8 flex items-center gap-3"
           >
             <span
               className="w-12 h-1 bg-brand-orange rounded-full"

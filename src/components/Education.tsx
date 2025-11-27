@@ -11,12 +11,12 @@ export function Education({ education, title, ariaLabels }: EducationProps) {
   return (
     <section
       id="education"
-      className="py-20 px-6 lg:px-24"
+      className="  px-6 lg:px-24"
       aria-labelledby="education-title"
     >
       <h3
         id="education-title"
-        className="text-3xl font-bold text-white mb-12 flex items-center gap-3"
+        className="text-3xl font-bold text-white mb-6 flex items-center gap-3"
       >
         <span
           className="w-12 h-1 bg-brand-orange rounded-full"

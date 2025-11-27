@@ -41,12 +41,12 @@ export const SkillsGrid = memo(function SkillsGrid({
   return (
     <section
       id="skills"
-      className="py-20 px-6 lg:px-24 bg-zinc-900/30"
+      className="px-6 lg:px-24 bg-zinc-900/30"
       aria-labelledby="skills-title"
     >
       <h3
         id="skills-title"
-        className="text-3xl font-bold text-white mb-16 flex items-center gap-3"
+        className="text-3xl font-bold text-white mb-6 flex items-center gap-3"
       >
         <span
           className="w-12 h-1 bg-brand-orange rounded-full"
