@@ -74,6 +74,9 @@ function App() {
             experiences={experience}
             title={ui.experience}
             ariaLabels={ariaLabels}
+            nonTechExperienceMessage={ui.nonTechExperienceMessage}
+            unlockButtonLabel={ui.unlockButtonLabel}
+            unlockButtonText={ui.unlockButtonText}
           />
 
           <SkillsGrid

@@ -48,6 +48,9 @@ export type ResumeData = {
     philosophyDesc: string;
     radarTitle: string;
     getInTouch: string;
+    nonTechExperienceMessage: string;
+    unlockButtonLabel: string;
+    unlockButtonText: string;
   };
   ariaLabels: {
     skipToContent: string;
@@ -64,6 +67,11 @@ export type ResumeData = {
     unlockExperiences: string;
     experienceTimeline: string;
     technologiesUsed: string;
+    experienceCard: string;
+    experienceUnlocked: string;
+    lockedContentDescription: string;
+    experienceDescription: string;
+    periodLabel: string;
     educationList: string;
     socialLinks: string;
     chartDescription: string;
