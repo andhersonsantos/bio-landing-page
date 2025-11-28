@@ -1,5 +1,4 @@
 import { memo, useMemo } from 'react';
-import { motion } from 'framer-motion';
 import { Mail, MapPin } from 'lucide-react';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
 import { LinkedinIcon } from './icons/LinkedinIcon';
@@ -34,22 +33,13 @@ export const Hero = memo(function Hero({
       <div className="absolute bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[100px]" />
 
       <div className="z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="animate-fade-in-up">
           <span className="text-brand-orange font-mono tracking-wide text-lg mb-4 block">
             {greeting}
           </span>
-        </motion.div>
+        </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
-        >
+        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up delay-100">
           {nameWords.map((word, i) => (
             <span
               key={i}
@@ -58,34 +48,23 @@ export const Hero = memo(function Hero({
               {word}{' '}
             </span>
           ))}
-        </motion.h1>
+        </h1>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-2xl md:text-3xl text-brand-muted font-light mb-8"
-        >
+        <h2 className="text-2xl md:text-3xl text-brand-muted font-light mb-8 animate-fade-in-up delay-200">
           {role}
-        </motion.h2>
+        </h2>
 
         {summary.map((item, index) => (
-          <motion.p
+          <p
             key={`summary-${index}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg text-brand-muted leading-relaxed mb-10"
+            className="text-lg text-brand-muted leading-relaxed mb-10 animate-fade-in-up delay-300"
           >
             {item}
-          </motion.p>
+          </p>
         ))}
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap gap-4 mb-12"
+        <div
+          className="flex flex-wrap gap-4 mb-12 animate-fade-in-up delay-400"
           role="group"
           aria-label={ariaLabels.contactLinks}
         >
@@ -127,13 +106,10 @@ export const Hero = memo(function Hero({
             <InstagramIcon size={18} aria-hidden="true" />
             <span>Instagram</span>
           </a>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-wrap gap-6 text-sm text-brand-muted font-mono"
+        <div
+          className="flex flex-wrap gap-6 text-sm text-brand-muted font-mono animate-fade-in-up delay-600"
           aria-label={ariaLabels.location}
         >
           <div className="flex items-center gap-2">
@@ -144,7 +120,7 @@ export const Hero = memo(function Hero({
             />
             <span>{contact.location}</span>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
