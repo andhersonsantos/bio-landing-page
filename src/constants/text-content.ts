@@ -161,14 +161,15 @@ export const DATA_PT: ResumeData = {
       period: 'Jul 2023 – Fev 2024',
       location: 'Remoto',
       summary: [
-        'Desenho da arquitetura front-end para consolidar clientes de múltiplos sistemas legados e países em um produto global unificado, reduzindo custos de manutenção.',
-        'Definição do "Golden Path" para desenvolvimento front-end, implementando processos de padrões de código, code review e documentação (RFCs).',
+        'Focado em desenhar arquiteturas de aplicações front-end, estabelecer padrões de desenvolvimento e mentoria.',
+        'Consolidação de clientes de múltiplos sistemas legados e países em um produto global unificado, reduzindo complexidade e custos de manutenção.',
       ],
       techStack: [
         'React.js',
         'Next.js',
         'TypeScript',
         'Playwright',
+        'Java',
         'Azure',
         'i18n',
       ],
@@ -179,7 +180,8 @@ export const DATA_PT: ResumeData = {
       period: 'Set 2019 – Jul 2023',
       location: 'Remoto',
       summary: [
-        'Colaboração direta com Produto e QA para definir requisitos de sistemas de saúde de alta criticidade.',
+        'Evolução de sistemas legados multi-plataformas.',
+        'Colaboração direta com Produto e QA para definir requisitos de sistemas.',
         'Agile Leader: Responsável pelo acompanhamento de KPIs de vazão da squad e promoção de metodologias Ágeis (Scrum, Kanban, XP).',
       ],
       techStack: [
@@ -447,14 +449,15 @@ export const DATA_EN: ResumeData = {
       period: 'Jul 2023 – Feb 2024',
       location: 'Remote',
       summary: [
-        'Designed the front-end architecture to consolidate clients from multiple legacy systems and countries into a single, unified global product, reducing maintenance costs.',
-        'Defined the "Golden Path" for front-end development, implementing rigorous code review processes and documentation standards (RFCs).',
+        'Focused on designing front-end application architectures, establishing development standards and mentoring.',
+        'Consolidation of clients from multiple legacy systems and countries into a single, unified global product, reducing complexity and maintenance costs.',
       ],
       techStack: [
         'React.js',
         'Next.js',
         'TypeScript',
         'Playwright',
+        'Java',
         'Azure',
         'i18n',
       ],
@@ -465,7 +468,8 @@ export const DATA_EN: ResumeData = {
       period: 'Sep 2019 – Jul 2023',
       location: 'Remote',
       summary: [
-        'Worked directly with Product and QA to define requirements for high-criticality healthcare systems.',
+        'Evolution of multiple platform legacy systems.',
+        'Worked directly with Product and QA to define requirements.',
         'Agile Leader: Responsible for tracking and managing squad throughput KPIs, and promoting Agile methodologies (Scrum, Kanban, XP).',
       ],
       techStack: [
